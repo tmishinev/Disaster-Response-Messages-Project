@@ -5,13 +5,14 @@
 
 ## 1. About the Project:
 
-    #### This Project is part of Data Science Nanodegree Program by Udacity in collaboration with Figure Eight. The initial dataset provided #### by Figure Eight contain real messages sent during disaster events and their respective categories. The aim of the project is to build #### a Natural Language Processing tool that categorize messages.
+####    This Project is part of Data Science Nanodegree Program by Udacity in collaboration with Figure Eight. The initial dataset provided 
+#### by Figure Eight contain real messages sent during disaster events and their respective categories. The aim of the project is to build #### a Natural Language Processing tool that categorize messages.
 
-    #### The Project is divided in the following Sections:
+####    The Project is divided in the following Sections:
 
-        #### 1. Data Processing, ETL Pipeline to extract data from source, clean data and save them in a proper databse structure
-        #### 2. Machine Learning Pipeline to train a model able to classify text message in categories
-        #### 3. Web App to show model results in real time using Dash and Plotly.
+#### 1. Data Processing, ETL Pipeline to extract data from source, clean data and save them in a proper databse structure
+#### 2. Machine Learning Pipeline to train a model able to classify text message in categories
+#### 3. Web App to show model results in real time using Dash and Plotly.
 
 ## 2. File structure:
 - ### **root directory**:
@@ -33,14 +34,14 @@
 
 ## 3. Build with:
     
-    ### Web app implementation using Dash and Plotly. Hosted by Heroku
+### Web app implementation using Dash and Plotly. Hosted by Heroku
 
 ## 4. Installation:
 
-    #### - clone the repository.
-    #### - run process_data.py to create the SQLlite.db. () : 'python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db'
-    #### - run train_classifier to train the 'models/classifier.pkl' : 'python train_classifier.py data/DisasterResponse.db models/classifier.pkl'
-    #### - run dash_app.py to start the server (localhost:8050). : 'python dash_app.py'
+#### - clone the repository.
+#### - run process_data.py to create the SQLlite.db. () : 'python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db'
+#### - run train_classifier to train the 'models/classifier.pkl' : 'python train_classifier.py data/DisasterResponse.db models/classifier.pkl'
+#### - run dash_app.py to start the server (localhost:8050). : 'python dash_app.py'
 
 ## 5. Web app interface:
 
