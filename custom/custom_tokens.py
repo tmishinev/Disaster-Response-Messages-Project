@@ -45,6 +45,13 @@ def remove_url(txt):
     return " ".join(re.sub("([^0-9A-Za-z \t])|(\w+:\/\/\S+)", "", txt).split())
 
 def top_words(df):
+
+    """
+    Extracts top N words
+    Input: Dataframe
+           
+    Output: Words, Count Dataframe
+    """
     # Get all the word tokens in dataframe for Disaster and Non-Disaster
     # - remove url, tokenize tweet into words, lowercase words
     stop = stopwords.words('english')

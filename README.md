@@ -1,34 +1,79 @@
-Disaster Response Pipeline Project
-Motivation
-Created ETL pipeline in Python to clean, prepare and load data to SQLite; Built NLP and ML Model to classify text from messages and posts to 36 disaster labels with MultiOutput Classifier (LinearSVC is used) and deployed working model to WebApp
+# Disaster Response Messages Project
 
-Project Files
-Python Scripting files:
-data/process_data.py: Python script to clean, join data in the 2 csv files in the data folder and load data into the sqlite database DisasterResponse.db
-models/train_classifier.py: Python script to load data from Database created from process_data.py, train and test RandomForestClassifier Model to categorize messages using NLTK and GridSearchCV
-app/run.py: python script to deploy the model onto webapp, where the model outputs the category of each message input in by user
-Data files:
-data/disaster_categories.csv: contains 36 categories for each message ID
-data/disaster_messages.csv: contains actual message text
-DisasterResponse.db: sqlite database created from process_data.py
-Helper files:
-app/go.html, app/master.html: html files to render webapp for run.py output
-Installation/Requirement
-The code is written in Python3. To run the Python code, you will need to install necessary packages using pip install or conda install.
-Heroku files:
-Procfile : Necessary for bootstrap/flask deployment in Heroku
-Procfile_streamlit : Contains the string for streamlit deployment in Heroku (should replace Procfile)
-nltk.txt : corpus to be downloaded during deployment
+## Web implementation : https://dr-dash.herokuapp.com/
 
-Data Analysis packages: numpy, pandas
-Database engine: sqlalchemy
-Natural language processing: NLTK and its dependencies
-Machine Learning packages: scikitlearn and its dependencies
-Instructions to run the python script
-Run the following commands in the project's root directory to set up your database and model.
 
-To run ETL pipeline that cleans data and stores in database python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
-To run ML pipeline that trains classifier and saves python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
-Run the following command in the app's directory to run deploy web app. python run.py
+## 1. About the Project:
 
-Go to http://0.0.0.0:3001/ or localhost:3001
+    This Project is part of Data Science Nanodegree Program by Udacity in collaboration with Figure Eight. The initial dataset provided by Figure Eight contain real messages sent during disaster events and their respective categories. The aim of the project is to build a Natural Language Processing tool that categorize messages.
+
+    The Project is divided in the following Sections:
+
+        1. Data Processing, ETL Pipeline to extract data from source, clean data and save them in a proper databse structure
+        2. Machine Learning Pipeline to train a model able to classify text message in categories
+        3. Web App to show model results in real time using Dash and Plotly.
+
+## 2. File structure:
+- ### **root directory**:
+    - train_classifuier.py : trains the classifier (LinearSVC). Run in root directory by - 'python train_classifier.py data/DisasterResponse.db models/classifier.pkl'.
+    - dash_app.py : Dash/Plotly web visualization - python dash_app.py.
+    - nltk.txt : nltk downloads for Heroku implementation.
+    - Procfile : file for Heroku implementation.
+    - requirements.txt : required libraries.
+
+- ### **data**:
+     - DisasterResponse.db : Database with cleaned data created by 'process_data.py' script.
+     - process_data.py : Cleans the raw .csv data and saves it into SQLite database (DisasterResponse.db : table - DisasterMessageETL)
+
+- ### **models**:
+     - classifier.pkl : trained classifier created by 'train_classifier.py' script
+
+- ### **custom**:
+    - custom_tokens.py : contains custom tokenization function
+
+## 3. Build with:
+    
+    ### Web app implementation using Dash and Plotly. Hosted by Heroku
+
+## 4. Installation:
+
+    - clone the repository.
+    - run process_data.py to create the SQLlite.db. () : 'python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db'
+    - run train_classifier to train the 'models/classifier.pkl' : 'python train_classifier.py data/DisasterResponse.db models/classifier.pkl'
+    - run dash_app.py to start the server (localhost:8050). : 'python dash_app.py'
+
+## 5. Web app interface:
+
+- ### Heroku deployment: https://dr-dash.herokuapp.com/
+
+
+- ### **Tab - Predict message:**
+
+    - Text input control: Enter message for classification
+
+    - fig.1 : Bar chart with predicted categories.
+
+    ![alt text](https://github.com/tmishinev/dr_dash/blob/master/git_new/tab.1.JPG?raw=true)
+
+- ### **Tab - Explore Dataset:**
+
+    - Chart 1 : Most common words associated with disaster messages.
+
+    - Chart 2 : Most common words associated with non-disaster messages.
+
+    - Chart 3 : Percentage positive labels per category.
+
+    - Chart 4 : Pie Chart. Message distribution by genre/related to disaster.
+
+    - Slider : Select how many top words to include into Chart 1/2.
+
+    ![alt text](https://github.com/tmishinev/dr_dash/blob/master/git_new/tab.2.JPG?raw=true)
+
+- ### 6. Contact:
+
+        Todor Mishinev - todor.mishinev@gmail.com
+
+        Project link - https://github.com/tmishinev/dr_dash.git
+
+
+

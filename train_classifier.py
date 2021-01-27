@@ -50,7 +50,7 @@ def build_model():
     Args:
       None
     Returns:
-      pipeline (sklearn pipeline object)
+      pipeline (sklearn pipeline object object)
     """
 
 
@@ -62,10 +62,15 @@ def build_model():
         ('clf', MultiOutputClassifier(LinearSVC(class_weight = 'balanced')))
     ])
 
-    
 
+    parameters = {
+    'vect__ngram_range': ((1,1),(1,2)),
+    'clf__estimator__C' : (0.1, 1, 10),
+    }
 
-    return pipeline
+    cv = GridSearchCV(pipeline, param_grid = parameters, n_jobs = -1, cv = 3)
+
+    return cv
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
@@ -138,12 +143,13 @@ def main():
         
         print('Training model...')
         model.fit(X_train, Y_train)
-        
+        print(model.best_params_)
+
         print('Evaluating model...')
-        print(evaluate_model(model, X_test, Y_test, category_names))
+        print(evaluate_model(model.best_estimator_, X_test, Y_test, category_names))
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
-        save_model(model, model_filepath)
+        save_model(model.best_estimator_, model_filepath)
 
         print('Trained model saved!')
 
