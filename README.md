@@ -15,7 +15,7 @@
 
 ## 2. File structure:
 - ### **root directory**:
-    - train_classifuier.py : trains the classifier (LinearSVC). Run in root directory by - 'python train_classifier.py data/DisasterResponse.db models/classifier.pkl'.
+    - train_classifier.py : trains the classifier (LinearSVC). Run in root directory by - 'python train_classifier.py data/DisasterResponse.db models/classifier.pkl'.
     - dash_app.py : Dash/Plotly web visualization - python dash_app.py.
     - nltk.txt : nltk downloads for Heroku implementation.
     - Procfile : file for Heroku implementation.
