@@ -38,7 +38,7 @@
 ## 4. Installation:
 
 - #### clone the repository.
-- #### run process_data.py to create the SQLlite.db. () : 'python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db'
+- #### run process_data.py to create the SQLlite.db. () : 'python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db'
 - #### run train_classifier to train the 'models/classifier.pkl' : 'python train_classifier.py data/DisasterResponse.db models/classifier.pkl'
 - #### run dash_app.py to start the server (localhost:8050). : 'python dash_app.py'
 
