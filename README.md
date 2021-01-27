@@ -5,8 +5,7 @@
 
 ## 1. About the Project:
 
-####    This Project is part of Data Science Nanodegree Program by Udacity in collaboration with Figure Eight. The initial dataset provided 
-#### by Figure Eight contain real messages sent during disaster events and their respective categories. The aim of the project is to build #### a Natural Language Processing tool that categorize messages.
+####    This Project is part of Data Science Nanodegree Program by Udacity in collaboration with Figure Eight. The initial dataset provided by Figure Eight contain real messages sent during disaster events and their respective categories. The aim of the project is to build a Natural Language Processing tool that categorize messages.
 
 ####    The Project is divided in the following Sections:
 
