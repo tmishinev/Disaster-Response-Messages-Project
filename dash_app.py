@@ -68,7 +68,9 @@ def distribution_charts():
         go.Bar(
             x=pos_labels.index,
             y=round(pos_labels/len(y)*100,1),
-            opacity = 0.8
+            opacity = 0.8,
+            marker_color = 'green',
+            name = 'Positive labels [%]'
         ),
         row=1, col=1
         )
@@ -79,11 +81,12 @@ def distribution_charts():
             labels = pie['category'],
             opacity = 0.8,
             hole = 0.4,
-            text = pie['genre']
+            name = 'Message distribution',
+            textposition = 'inside'
         ),
         row=1, col=2
         )
-    fig.update_layout(plot_bgcolor = BGCOLOR, paper_bgcolor = BGCOLOR)
+    fig.update_layout(plot_bgcolor = BGCOLOR, paper_bgcolor = BGCOLOR, legend = {'orientation' : "v",  'yanchor': 'top','x' : 0.5, 'y' : 1.2} )
 
     return fig
 
@@ -181,7 +184,8 @@ def bar_top_words(number):
         go.Bar(
             x=words_dis['Word'],
             y=words_dis['Count'],
-            opacity = 0.8
+            opacity = 0.8,
+            name = 'disaster words'
         ),
         row=1, col=1
         )
@@ -190,11 +194,13 @@ def bar_top_words(number):
         go.Bar(
             x=words_non['Word'],
             y=words_non['Count'],
-            opacity = 0.8
+            opacity = 0.8,
+            name = 'non-disaster words'
         ),
         row=1, col=2
         )
-    fig.update_layout(plot_bgcolor = BGCOLOR, paper_bgcolor = BGCOLOR)
+    fig.update_layout(plot_bgcolor = BGCOLOR, paper_bgcolor = BGCOLOR, legend = {'orientation' : "h",  'xanchor': 'center','x' : 0.5, 'y' : 1.2} )
+
     return fig
 
 # ------------------------------------------------------------------------------
