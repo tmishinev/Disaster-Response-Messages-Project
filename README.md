@@ -53,7 +53,7 @@
 
     - fig.1 : Bar chart with predicted categories.
 
-    ![alt text](https://github.com/tmishinev/dr_dash/blob/master/git_new/tab.1.JPG?raw=true)
+    ![alt text](https://github.com/tmishinev/dr_dash/blob/main/git_new/tab.1.JPG?raw=true)
 
 - ### **Tab - Explore Dataset:**
 
@@ -67,7 +67,7 @@
 
     - Slider : Select how many top words to include into Chart 1/2.
 
-    ![alt text](https://github.com/tmishinev/dr_dash/blob/master/git_new/tab.2.JPG?raw=true)
+    ![alt text](https://github.com/tmishinev/dr_dash/blob/main/tab.2.JPG?raw=true)
 
 - ### 6. Contact:
 
