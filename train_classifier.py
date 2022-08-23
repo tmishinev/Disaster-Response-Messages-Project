@@ -11,7 +11,7 @@ from sklearn.metrics import classification_report, accuracy_score, confusion_mat
 from sklearn.svm import  LinearSVC
 import pickle
 from custom.custom_tokens import tokenize, CustomUnpickler
-
+from lightgbm import LGBMClassifier
 
 def load_data(database_filepath):
     
@@ -50,7 +50,7 @@ def build_model():
     Args:
       None
     Returns:
-      pipeline (sklearn pipeline object object)
+      pipeline (sklearn GridSearchCV object object)
     """
 
 
@@ -64,8 +64,7 @@ def build_model():
 
 
     parameters = {
-    'vect__ngram_range': ((1,1),(1,2)),
-    'clf__estimator__C' : (0.1, 1, 10),
+      'vect__ngram_range': ((1,1),(1,2))
     }
 
     cv = GridSearchCV(pipeline, param_grid = parameters, n_jobs = -1, cv = 3)
@@ -121,7 +120,7 @@ def save_model(model, model_filepath):
     '''saving the model after training and evaluation
     
     Args:
-      model (scikit learn pipeline): name of model
+      model (scikit learn ipeline): name of model
       database_filepath (str): name of database containing data
     Returns:
       None
